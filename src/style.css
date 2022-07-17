@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url('./fonts/Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+body {
+    font-family: Oswald;
+    background-image: url('./images/clouds.jpg');
+    background-size: 100%;
+}
+
+header {
+    margin: 18px 0 26px 0;
+}
+
+#title-heading {
+    font-size: 60px;
+    text-align: center;
+}
+
+#current-city-name {
+    font-size: 46px;
+    text-align: center;
+}
+
+#search {
+    display: grid;
+    grid-template-columns: auto 20px;
+    justify-content: center;
+}
+
+#search-bar input {
+    width: 125px;
+    margin-right: 6px;
+}
+
+#search-icon {
+    width: 20px;
+    height: auto;
+}
+
+#forecast {
+}
