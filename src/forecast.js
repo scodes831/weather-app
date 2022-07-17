@@ -1,14 +1,4 @@
 //access geocode api
-// export async function getCoordinates(input) {
-//     const coordinatesURL = `https://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=0643aacd639df6653d874ad486e6f335`;
-//     const response = await fetch(coordinatesURL, {mode: 'cors'});
-//     const coordinates = await response.json();
-//     console.log(coordinates);
-//     const lat = response[0].lat;
-//     const lon = coordinates.lon;
-//     getWeather(lat, lon);
-// }
-
 export function getCoordinates(input) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=0643aacd639df6653d874ad486e6f335`, {mode: 'cors'})
     .then(function(response) {
@@ -22,21 +12,29 @@ export function getCoordinates(input) {
     .catch(function(error) {
         console.log(error);
     })
-
 }
 
-//access 5 day forecast api
+//access current weather api
 function getWeather(lat, lon) {
-    console.log(`the latitude is ${lat} and longitude is ${lon}`);
-    fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0643aacd639df6653d874ad486e6f335`, {mode: 'cors'})
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=0643aacd639df6653d874ad486e6f335`, {mode: 'cors'})
     .then(function(response) {
         return response.json();
     })
     .then(function(response) {
-        console.log(response);
+        const weather = response.weather[0].main;
+        const currentTemp = response.main.temp;
+        const lowTemp = response.main.temp_min;
+        const highTemp = response.main.temp_max;
+        const humidity = response.main.humidity;
+        const wind = response.wind.speed;
+        console.log(`current temp is ${currentTemp}`); //301.59
+        console.log(`low temp is ${lowTemp}`);
+        console.log(`high temp is ${highTemp}`);
+        console.log(`humidity is ${humidity}`);
+        console.log(`wind is ${wind}`);
+        console.log(`overall weather is ${weather}`);
     })
     .catch(function(error) {
         console.log(error);
     })
-
 }

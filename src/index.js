@@ -12,11 +12,10 @@ searchBtn.addEventListener('click', () => {
     getCoordinates(userInput);
 })
 
+//add info to cards
+function updateForecastCards() {
+    const forecastContainer = document.getElementById('forecast-container');
 
-//put lat/long values in the 5 day forecast api
-//retrieve weather forecast
-
-
-//event listener for button
-//generate cards
+    
+}
 
