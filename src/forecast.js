@@ -1,8 +1,9 @@
+import { displayWeather } from './card';
 import { convertCelsiusToFahrenheit,
         convertFahrenheitToCelsius,
         convertKelvinToFahrenheit } from './conversions';
 
-const weatherObj = {
+export const weatherObj = {
         overall: 0,
         currentTemp: 0,
         highTemp: 0,
@@ -36,9 +37,9 @@ function getWeather(lat, lon) {
         weatherObj.currentTemp = convertKelvinToFahrenheit(response.main.temp);
         weatherObj.highTemp = convertKelvinToFahrenheit(response.main.temp_max);
         weatherObj.lowTemp = convertKelvinToFahrenheit(response.main.temp_min);
-        weatherObj.humidity = response.main.humidity + '%';
-        weatherObj.wind = response.wind.speed + 'mph';
-        console.log(weatherObj);
+        weatherObj.humidity = Math.round(response.main.humidity) + '%';
+        weatherObj.wind = Math.round(response.wind.speed) + ' mph';
+        displayWeather(weatherObj);
     })
     .catch(function(error) {
         console.log(error);
