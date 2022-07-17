@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <header>
+        <h1 id="title-heading">Today's Weather Forecast for</h1>
+        <h2 id="current-city-name"></h2>
+    </header>
+    <section id="search">
+        <input type="text" id="search-bar" placeholder="Search city name...">
+        <img src="../src/images/search.png" alt="search icon" id="search-icon">
+    </section>
+    
+    <section id="forecast">
+        <div id="toggle-container"></div>
+        <div id="forecast-container">
+            <div id="card">
+                <img src="" alt="weather-icon" id="weather-icon">
+                <div class="row">
+                    <h3 class="current">Current Temp</h3>
+                    <h3 class="current" id="current-temp">00</h3>
+                </div>
+                <div class="row">
+                    <h4 class="wind">Wind</h4>
+                    <h4 class="wind" id="wind-value">0</h4>
+                </div>
+                <div class="row">
+                    <h4 class="humidity">Humidity</h4>
+                    <h4 class="humidity" id="humidity-value">0</h4>
+                </div>
+                <div class="row">
+                    <h4 class="high">High</h4>
+                    <h4 class="high" id="high-temp">00</h4>
+                </div>
+                <div class="row">
+                    <h4 class="low">Low</h4>
+                    <h4 class="low" id="low-temp">00</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="main.js" defer></script>
+</body>
+</html>
