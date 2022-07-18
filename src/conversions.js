@@ -3,8 +3,8 @@ export function convertKelvinToFahrenheit(temp) {
 }
 
 export function convertFahrenheitToCelsius(temp) {
-    const numTemp = +temp.slice(temp.length-2, 2);
-    return (Math.round((temp-32)/1.8) + '°C');
+    const numTemp = +temp.substring(0, temp.length-2);
+    return (Math.round((numTemp-32)/1.8) + '°C');
 }
 
 export function convertCelsiusToFahrenheit(temp) {
