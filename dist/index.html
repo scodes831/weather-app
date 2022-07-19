@@ -17,10 +17,11 @@
     </section>
     
     <section id="forecast">
-        <div id="toggle-container"></div>
         <div id="forecast-container">
             <div id="card">
-                <img src="" alt="weather-icon" id="weather-icon">
+                <div id="icon-row">
+                    <img src="" alt="weather-icon" id="weather-icon">
+                </div>
                 <div class="row">
                     <h3 class="current">Current Temp</h3>
                     <h3 class="current" id="current-temp">00</h3>
@@ -42,6 +43,10 @@
                     <h4 class="low" id="low-temp">00</h4>
                 </div>
             </div>
+        </div>
+        <div id="toggle-container">
+            <button class="toggle" id="celsius"><img src="../src/images/celsius.png" alt="celsius"></button>
+            <button class="toggle" id="fahrenheit"><img src="../src/images/fahrenheit.png" alt="fahrenheit"></button>
         </div>
     </section>
     <script src="main.js" defer></script>
