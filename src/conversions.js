@@ -8,6 +8,6 @@ export function convertFahrenheitToCelsius(temp) {
 }
 
 export function convertCelsiusToFahrenheit(temp) {
-    const numTemp = +temp.slice(temp.length-2, 2);
+    const numTemp = +temp.substring(0, temp.length-2);
     return (Math.round(numTemp*(9/5)+32) + '°F');
 }
