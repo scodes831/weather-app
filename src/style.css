@@ -26,23 +26,93 @@ header {
 #current-city-name {
     font-size: 46px;
     text-align: center;
+    text-transform: capitalize;
+    color: #7b8eb0;
 }
 
 #search {
     display: grid;
     grid-template-columns: auto 20px;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 32px;
 }
 
-#search-bar input {
-    width: 125px;
-    margin-right: 6px;
+#search-bar {
+    width: 150px;
+    padding: 8px;
+    border: 2px solid #9ca5b5;
+    border-radius: 2px;
+}
+
+#search-bar::placeholder {
+    color: #9ca5b5;
 }
 
 #search-icon {
     width: 20px;
     height: auto;
+    padding: 6px;
+    border: none;
 }
 
-#forecast {
+#card {
+    display: none;
+    background-color: white;
+    font-size: 22px;
+    width: 250px;
+    margin: 0 auto;
+    padding: 22px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px 1px rgba(0,0,0,.2);
 }
+
+#weather-icon {
+    width: 90px;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+#icon-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current {
+    font-size: 28px;
+}
+
+#toggle-container {
+    display: none;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+
+.toggle:first-child {
+    margin-right: 8px;
+}
+
+.toggle {
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+.toggle:hover {
+    cursor: pointer;
+}
+
+.toggle img {
+    width: 50px;
+    height: auto;
+}
+
