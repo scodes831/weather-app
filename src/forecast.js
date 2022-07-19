@@ -2,6 +2,7 @@ import { displayWeather } from './card';
 import { convertCelsiusToFahrenheit,
         convertFahrenheitToCelsius,
         convertKelvinToFahrenheit } from './conversions';
+import { displayToggleBtns } from './display';
 
 export const weatherObj = {
         overall: 0,
@@ -11,6 +12,8 @@ export const weatherObj = {
         humidity: 0,
         wind: 0
 }
+
+getLocalStorageWeather();
 
 export function getCoordinates(input) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=0643aacd639df6653d874ad486e6f335`, {mode: 'cors'})
@@ -40,10 +43,31 @@ function getWeather(lat, lon) {
         weatherObj.humidity = Math.round(response.main.humidity) + '%';
         weatherObj.wind = Math.round(response.wind.speed) + ' mph';
         displayWeather(weatherObj);
+        displayToggleBtns();
+        localStorage.setItem('weatherObj', JSON.stringify(weatherObj));
     })
     .catch(function(error) {
         console.log(error);
     })
 }
+
+function getLocalStorageWeather() {
+    const savedInLocalStorage = localStorage.getItem('weatherObj');
+    if (savedInLocalStorage) {
+        const savedWeatherObj = JSON.parse(savedInLocalStorage);
+        weatherObj.overall = savedWeatherObj.overall;
+        weatherObj.currentTemp = savedWeatherObj.currentTemp;
+        weatherObj.highTemp = savedWeatherObj.highTemp;
+        weatherObj.lowTemp = savedWeatherObj.lowTemp;
+        weatherObj.humidity = savedWeatherObj.humidity;
+        weatherObj.wind = savedWeatherObj.wind;
+
+        displayWeather(weatherObj);
+        displayToggleBtns();
+    } else {
+        return;
+    }
+}
+
 
 
